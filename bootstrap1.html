@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="cs-cz">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+
+    <!-- Odkaz na CSS styly -->
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Formulář</h1>
+    </div>
+    <div class="container">
+        <form class="bg-grey rounded p-3 border-primary">
+            <div>
+                <label for="prihlaseni-email">Email</label>
+                <input type="email" class="form-control bg-dark text-white rounded-pill" id="prihlaseni-email"
+                    aria-describedby="popisEmailu" placeholder="vas@email.cz">
+                <small class="form-text text-muted">Kromě emailu můžete zadat i své telefonní číslo.</small>
+            </div>
+            <div>
+                <label for="prihlaseni-heslo">Heslo</label>
+                <input type="password" class="form-control rounded-pill" id="prihlaseni-heslo">
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary rounded-pill mt-5">Přihlásit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="container mt-5">
+            <h1>Checkboxy</h1>
+        </div>
+        <div class="container p-3 bg-light rounded">
+            <div class="form-check form-control-sm ">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox1">
+                <label class="form-check-label" for="checkbox1">
+                    Checkbox 1
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkbox2">
+                <label class="form-check-label" for="checkbox2">
+                    Checkbox 2
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container m-3 mx-auto">
+        <div class="container mt-5">
+            <h1>Radio tlačítka</h1>
+        </div>
+        <div class="container p-3 bg-light">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioButton" id="radio1" checked>
+                <label class="form-check-label" for="radio1">
+                    Radio Button 1
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioButton" id="radio2">
+                <label class="form-check-label" for="radio2">
+                    Radio Button 2
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container m-3 mx-auto ">
+        <div class="container">
+            <h1>Select, textarea, file inputy</h1>
+        </div>
+        <form class="bg-light p-3 rounded">
+            <div>
+                <label for="ukazka-velikosti">Velikost</label>
+                <select class="form-control" id="ukazka-velikosti">
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                </select>
+            </div>
+            <div class="mt-1">
+                <label for="ukazka-poznamka">Poznámka</label>
+                <textarea class="form-control" placeholder="Napiš poznámku..." ukazka-poznamka" rows="3"></textarea>
+            </div>
+            <div class="mt-1">
+                <label for="ukazka-soubor">Životopis</label>
+                <input type="file" class="form-control form-control-sm disabled " id="ukazka-soubor">
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="container">
+        <div class="container mt-5">
+            <h1>Grid ve formulářích</h1>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="registrace-jmeno">Jméno</label>
+                    <input type="text" class="form-control col-form-label" placeholder="Jméno" id="registrace-jmeno">
+                </div>
+                <div class="col-sm-6">
+                    <label for="registrace-prijmeni">Příjmení</label>
+                    <input type="text" class="form-control col-form-label" placeholder="Příjmení"
+                        id="registrace-prijmeni">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="container mt-5">
+            <h1>Validace vstupů </h1>
+        </div>
+
+        <div class="container p-3 bg-light rounded">
+            <h2 class="text-center text-primary">Kontaktní formulář</h2>
+            <form id="needs-validation" novalidate="novalidate">
+                <div>
+                    <label for="formular-jmeno">Jméno</label>
+                    <input type="text" class="form-control" id="formular-jmeno" placeholder="Vladimír Mišík"
+                        required="required">
+                    <div class="invalid-feedback">
+                        Zadejte prosím své celé jméno.
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label for="formular-email">Email</label>
+                    <input type="text" class="form-control" id="formular-email" placeholder="vladimir@misik.cz"
+                        required="required">
+                    <div class="invalid-feedback">
+                        Zadejte prosím validní emailovou adresu.
+                    </div>
+                </div>
+                <div class="container text-center ">
+                    <button class="btn btn-primary mt-5" type="submit">Odeslat</button>
+                </div>
+            </form>
+
+            <script>
+                (function () {
+                    'use strict';
+
+                    window.addEventListener('load', function () {
+                        var form = document.getElementById('needs-validation');
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    }, false);
+                })();
+            </script>
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="container mt-5">
+            <h1>Tabulka</h1>
+        </div>
+        <table class="table  table-light">
+            <caption>Postavičky ze seriálu Simpsonovi © Matt Groening, 20th Century Fox</caption>
+            <thead class="table bg-warning text-white">
+                <tr>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>Věk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Homer</td>
+                    <td>Simpson</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>Ned</td>
+                    <td>Flanders</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>Edna</td>
+                    <td>Krabappelová</td>
+                    <td>41</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+
+        <form>
+            <div class="row">
+                <div class="col-sm-5">
+                    <label for="registrace-jmeno">Jméno</label>
+                    <input type="text" class="form-control" placeholder="Jméno" id="registrace-jmeno">
+                </div>
+                <div class="col-sm-">
+                    <label for="registrace-prijmeni">Příjmení</label>
+                    <input type="text" class="form-control" placeholder="Příjmení" id="registrace-prijmeni">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="containe mt-5">
+            <h1>Vlastní styly</h1>
+            <h2>Standard</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Souhlasím s obchodními podmínkami</label>
+            </div>
+            <h2>Vlastní styl</h2>
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="customCheck1">
+                    <label class="form-check-label" for="customCheck1">
+                        Souhlasím s obchodními podmínkami
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="platebni-metoda" id="platebni-metoda1"
+                        value="kartou" checked>
+                    <label class="form-check-label" for="platebni-metoda1">
+                        Platba kartou
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="platebni-metoda" id="platebni-metoda2"
+                        value="prevodem" checked>
+                    <label class="form-check-label" for="platebni-metoda2">
+                        Platba převodem
+                    </label>
+                </div>
+                <div>
+                    <label for="formular-select">Velikost</label>
+                    <select class="form-select" id="formular-select">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="customFile" class="form-label">Nahrát soubor</label>
+                    <input type="file" class="form-control" id="customFile">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Skupiny inputů</h1>
+        <div>
+            <div class="input-group">
+                <span class="input-group-text" id="adresa-addon">itnetwork.cz/</span>
+                <input type="text" class="form-control" placeholder="název článku" aria-label="Název článku"
+                    aria-describedby="adresa-addon">
+            </div>
+        </div>
+        <div>
+            <div class="input-group">
+                <span class="input-group-text" id="email-addon">@itnetwork.cz</span>
+                <input type="text" class="form-control" placeholder="vaše jméno" aria-label="Vaše jméno"
+                    aria-describedby="email-addon">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1>Více addonů v řádce</h1>
+        <div class="input-group">
+            <span class="input-group-text" id="checkbox-addon">
+                <input type="checkbox" aria-label="Checkbox">
+            </span>
+            <span class="input-group-text" id="text-addon">Text</span>
+            <button class="btn btn-secondary" type="button">Tlačítko</button>
+            </span>
+            <input type="text" class="form-control" aria-label="Ukázkový input">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Položka 1</a>
+                <a class="dropdown-item" href="#">Položka 2</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Položka 3</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Jumbotron</h1>
+        <div class="bg-light p-5 rounded-3 m-3">
+            <h1 class="display-3 fw-bold">ITnetwork.cz</h1>
+            <p class="lead">Sociální síť, kde se naučíte vše potřebné pro pobírání pohádkových platů v IT korporacích
+                nebo pro uskutečnění vlastních IT startupů. Všechny znalosti česky, na jednom místě, zcela zdarma nebo
+                za nejnižší cenu na trhu.</p>
+            <hr class="my-4">
+            <p>Jste připravení? Stačí kliknout.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Udělejte ze mě profíka</a>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h1>Odznaky (badges)</h1>
+        <span class="badge bg-warning">novinka</span>
+        <button type="button" class="btn btn-primary position-relative">
+            Tlačítko
+            <span class="badge bg-secondary rounded-pill position-absolute top-0 start-100 translate-middle">
+                5 <!-- Obsah badge -->
+            </span>
+        </button>
+        <button type="button" class="btn btn-primary">
+            Tlačítko
+            <span class="badge bg-info">5</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <h1>List group</h1>
+        <h2>Základní seznam</h2>
+        <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">Události</li>
+            <li class="list-group-item">Zprávy</li>
+            <li class="list-group-item">Články</li>
+            <li class="list-group-item disabled" aria-disabled="true">Aukce</li>
+        </ul>
+        <h2>Základní seznam barevný</h2>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-primary " aria-current="true">Události</li>
+            <li class="list-group-item list-group-item-success ">Zprávy</li>
+            <li class="list-group-item list-group-item-danger">Články</li>
+            <li class="list-group-item list-group-item-warning " aria-disabled="true">Aukce</li>
+        </ul>
+        <h2>S tlačítky</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Události</a>
+            <a href="#" class="list-group-item list-group-item-action">Zprávy</a>
+            <a href="#" class="list-group-item list-group-item-action">Články</a>
+            <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">Aukce</a>
+        </div>
+        <h2>S HTML obsahem</h2>
+        <div class="list-group">
+            <a href="#"
+                class="list-group-item list-group-item-warning list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Moderní webdesign od A do Z</h5>
+                    <small class="text-muted">4. ledna</small>
+                </div>
+                <p class="mb-1">
+                    Školení webdesignu a front-endových technologií HTML 5, CSS 3, bootstrap, SEO optimalizace pro
+                    vyhledávače, domény a webhostingy, SASS a LESS a dalších.
+                </p>
+            </a>
+            <a href="#"
+                class="list-group-item list-group-item-primary list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Objektové programování</h5>
+                    <small class="text-muted">14. ledna</small>
+                </div>
+                <p class="mb-1">
+                    Školení objektově orientovaného programování, kurz se zaměřuje zejména na třídy, zapouzdření,
+                    dědičnost, polymorfismus, abstrakci, statiku, rozhraní, výjimky, kolekce, lambda funkce a další.
+                </p>
+                <small class="text-danger">Poslední místa.</small>
+            </a>
+            <a href="#"
+                class="list-group-item list-group-item-danger list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Testování a verzování</h5>
+                    <small class="text-muted">24. ledna</small>
+                </div>
+                <p class="mb-1">
+                    Školení slouží jako příprava do zaměstnání pro všechny, kteří umí již dobře programovat, ale
+                    neovládají nástroje pro testování, verzování a práci v týmu.
+                </p>
+            </a>
+        </div>
+
+        <div class="container mt-3">
+            <h2>Taby pro Bootstrap 5</h2>
+        </div>
+        <div class="row py-5">
+            <div class="col-4">
+                <div class="list-group" role="tablist">
+                    <a class="list-group-item list-group-item-action list-group-item-customized active"
+                        id="list-rajska-list" data-bs-toggle="list" href="#list-rajska" role="tab"
+                        aria-controls="Rajská">Rajská</a>
+                    <a class="list-group-item list-group-item-action list-group-item-customized" id="list-cibule-list"
+                        data-bs-toggle="list" href="#list-cibule" role="tab" aria-controls="Cibule">Cibulová</a>
+                    <a class="list-group-item list-group-item-action list-group-item-customized" id="list-hovezi-list"
+                        data-bs-toggle="list" href="#list-hovezi" role="tab" aria-controls="Hovězí">Hovězí</a>
+                    <a class="list-group-item list-group-item-action list-group-item-customized" id="list-hribky-list"
+                        data-bs-toggle="list" href="#list-hribky" role="tab" aria-controls="Hříbky">Hřibová</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="list-rajska" role="tabpanel"
+                        aria-labelledby="list-rajska-list">Rajská polévka s kapáním</div>
+                    <div class="tab-pane fade" id="list-cibule" role="tabpanel" aria-labelledby="list-cibule-list">
+                        Domácí cibulačka</div>
+                    <div class="tab-pane fade" id="list-hribky" role="tabpanel" aria-labelledby="list-hribky-list">
+                        <p>Nejlepší hříbková je z lesních hřibů a domácí zeleniny.</p>
+                    </div>
+                    <div class="tab-pane fade" id="list-hovezi" role="tabpanel" aria-labelledby="list-hovezi-list">Silný
+                        hovězí vývar s kousky masa a nudličkami</div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Karta s navigací v hlavičce</h1>
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Aktivní</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Odkaz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Neaktivní</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Nadpis</h4>
+                <p class="card-text">Obsah karty.</p>
+            </div>
+        </div>
+
+
+        <h1 class="mt-5">Skupina karet</h1>
+        <div class="card-group">
+            <div class="card">
+                <img class="card-img-top" src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_les.jpeg"
+                    alt="Les">
+                <div class="card-body">
+                    <h4 class="card-title">Les</h4>
+                    <p class="card-text">Víte, že do lesa si můžete zajít odpočinout od informačních technologií? :)
+                        Dobrý je například ten Klánovický hned u Prahy.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">21. září</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_poust.jpeg"
+                    alt="Poušť">
+                <div class="card-body">
+                    <h4 class="card-title">Poušť</h4>
+                    <p class="card-text">Tato karta je velmi krátká.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">12. listopadu</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_jezero.jpeg"
+                    alt="Jezero">
+                <div class="card-body">
+                    <h4 class="card-title">Jezero</h4>
+                    <p class="card-text">Jezera se často vyskytovala v poezii, pravděpodobně pro pocity plynoucí z
+                        klidné hladiny rozlehlé vodní plochy. Není náhodou, že jedno z nejznámějších českých jezer nese
+                        jméno Karla Hynka Máchy, autora známé básně Máj.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">6. února</small>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Carousel</h1>
+        <div id="ukazka-carouselu" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#ukazka-carouselu" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#ukazka-carouselu" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#ukazka-carouselu" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_les.jpeg" class="d-block w-100"
+                        alt="Les">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Les</h5>
+                        <p>Víte, že do lesa si můžete zajít odpočinou od informačních technologií? :) Dobrý je například
+                            ten Klánovický hned u Prahy.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_poust.jpeg" class="d-block w-100"
+                        alt="Poušť">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Poušť</h5>
+                        <p>Vítr vane pouští, po písku žene klobouk. Zahnal ho do houští, starý a černý klobouk.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.itnetwork.cz/images/5/css/bootstrap/pozadi_jezero.jpeg" class="d-block w-100"
+                        alt="Jezero">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Jezero</h5>
+                        <p>Jezera se často vyskytovala v poezii, pravděpodobně pro pocity plynoucí z klidné hladiny
+                            rozlehlé vodní plochy.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#ukazka-carouselu" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Předchozí</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#ukazka-carouselu" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Další</span>
+            </button>
+        </div>
+
+        <h1 class="mt-5">Komponenta Collapse</h1>
+        <p>Za poštovné si účtujeme 99 Kč.</p>
+        <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#ukazka-collapse" role="button"
+                aria-expanded="false" aria-controls="ukazka-collapse">
+                Více informací
+            </a>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ukazka-collapse"
+                aria-expanded="false" aria-controls="ukazka-collapse">
+                Více informací
+            </button>
+        </p>
+        <div class="collapse bg-danger-subtle" id="ukazka-collapse">
+            <div class="card card-body">
+                Poštovné zahrnuje dopravu Českou poštou, balné a službu upozornění naší operátorky na déle nevyzvednutou
+                zásilku.
+            </div>
+        </div>
+
+        <h1 class="mt-5">Komponenta Accordion</h1>
+        <h3>Živnostenský zákon</h3>
+        <div id="harmonika" class="accordion" role="tablist">
+            <div class="card">
+                <div class="card-header bg-primary-subtle " role="tab" id="hlavicka-1">
+                    <h5 class="mb-0">
+                        <a class="collapsed" data-bs-toggle="collapse" href="#collapse-1" aria-expanded="true"
+                            aria-controls="collapse-1">
+                            Část první - Všeobecná ustanovení
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-1" class="collapse show" role="tabpanel" aria-labelledby="hlavicka-1"
+                    data-bs-parent="#harmonika">
+                    <div class="card-body">
+                        Tento zákon upravuje podmínky živnostenského podnikání (dále jen "živnost") a kontrolu nad
+                        jejich dodržováním. Živností je soustavná činnost provozovaná samostatně, vlastním jménem, na
+                        vlastní odpovědnost, za účelem dosažení zisku a za podmínek stanovených tímto zákonem.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="hlavicka-2">
+                    <h5 class="mb-0">
+                        <a data-bs-toggle="collapse" href="#collapse-2" aria-expanded="false"
+                            aria-controls="collapse-2">
+                            Část druhá - Druhy živností
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-2" class="collapse" role="tabpanel" aria-labelledby="hlavicka-2"
+                    data-bs-parent="#harmonika">
+                    <div class="card-body">
+                        Ohlašovacími živnostmi jsou
+                        <ul>
+                            <li>živnosti řemeslné, je-li podmínkou provozování živnosti odborná způsobilost uvedená v §
+                                21 a 22,
+                            <li>živnosti vázané, je-li podmínkou provozování živnosti odborná způsobilost uvedená v
+                                příloze č. 2 k tomuto zákonu, není-li dále stanoveno jinak,
+                            <li>živnost volná, u které není jako podmínka provozování živnosti odborná způsobilost
+                                stanovena.
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" role="tab" id="hlavicka-3">
+                    <h5 class="mb-0">
+                        <a data-bs-toggle="collapse" href="#collapse-3" aria-expanded="false"
+                            aria-controls="collapse-3">
+                            Část třetí - Rozsah živnostenského oprávnění
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-3" class="collapse" role="tabpanel" aria-labelledby="hlavicka-3"
+                    data-bs-parent="#harmonika">
+                    <div class="card-body">
+                        Rozsah živnostenského oprávnění (dále jen „rozsah oprávnění“) se posuzuje podle předmětu
+                        podnikání uvedeného ve výpisu s přihlédnutím k ustanovením této části. Živnostenské oprávnění k
+                        výkonu živnosti volné opravňuje k výkonu činností uvedených v příloze č. 4 k tomuto zákonu.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Accordion za pomoci .accordion</h1>
+        <div class="accordion" id="accordionPriklad">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        První položka
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionPriklad">
+                    <div class="accordion-body">
+                        Text první...
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Druhá položka
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionPriklad">
+                    <div class="accordion-body">
+                        Text druhý...
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Třetí položka
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionPriklad">
+                    <div class="accordion-body">
+                        Text třetí...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Dropdown</h1>
+        <div class="dropdown">
+            <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdown-tlacitko"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Kontakt
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-tlacitko">
+                <a class="dropdown-item" href="#">Centrála</a>
+                <a class="dropdown-item" href="#">Pobočka Praha</a>
+                <a class="dropdown-item" href="#">Pobočka Liberec</a>
+            </div>
+        </div>
+
+        <h1 class="mt-">Rozdělený dropdown</h1>
+        <div class="btn-group">
+            <a class="btn btn-danger" href="">Centrála</a>
+            <button type="button" class="btn btn-danger  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="visually-hidden">Další kontakty</span>
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Pobočka Praha</a>
+                <a class="dropdown-item" href="#">Pobočka Liberec</a>
+            </div>
+        </div>
+
+        <h1 class="mt-5">Položky menu</h1>
+        <div class="dropdown">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdown-tlacitko" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Účet
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <h6 class="dropdown-header">Přihlášení</h6>
+                <form class="px-4 py-3">
+                    <div class="mb-3">
+                        <label for="prihlaseni-email">Email</label>
+                        <input type="email" class="form-control" id="prihlaseni-email" placeholder="vas@email.cz">
+                    </div>
+                    <div class="mb-3">
+                        <label for="prihlaseni-heslo">Heslo</label>
+                        <input type="password" class="form-control" id="prihlaseni-heslo" placeholder="******">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Přihlásit</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item disabled" href="#">Registrovat se</a>
+                <a class="dropdown-item" href="#">Zapomněli jste heslo?</a>
+            </div>
+        </div>
+        
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="cs-cz">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+
+    <!-- Odkaz na CSS styly -->
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+    <div class="container ">
+
+        
+
+        <h1 class="mt-5">Scrollspy na navbaru</h1>
+        <body data-bs-spy="scroll" data-bs-target="#navbar-ukazka" data-bs-offset="70" style="position: relative">
+            <nav id="navbar-ukazka" class="navbar navbar-light bg-light sticky-top">
+                <a class="navbar-brand" href="#">Navigace</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#lorem">Lorem ipsum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#duis">Duis semper</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Další</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#fusce">Fusce erat eros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <h4 id="lorem">Lorem ipsum</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor efficitur quam nec dignissim. Aenean a condimentum tellus, vitae bibendum lectus. Maecenas convallis, ex ac dictum sagittis, arcu justo porta lorem, vitae efficitur leo risus id eros. Vivamus euismod lacus nec enim commodo, et viverra eros fermentum. Quisque congue scelerisque odio, ut imperdiet lectus ornare non. Maecenas ac pharetra ante, vel eleifend tellus. Integer id ante eget eros imperdiet placerat eget a odio. Maecenas mollis pellentesque aliquet. Cras ultricies erat nec lorem condimentum, gravida semper leo venenatis. Nullam in ipsum in odio commodo molestie at vel dui. Mauris quis lacus et lorem elementum ultrices.</p>
+                <h4 id="duis">Duis semper</h4>
+                <p>Duis semper id leo sit amet consequat. Integer sit amet odio mattis, scelerisque turpis in, mattis metus. Aenean nisl mi, pretium at mattis quis, auctor vitae sem. Duis at lobortis est. Phasellus auctor sem in imperdiet faucibus. Morbi laoreet nibh nec turpis rhoncus, in auctor nunc consectetur. Phasellus fringilla, leo non molestie dictum, orci enim auctor neque, sed dignissim augue mauris sit amet erat. Aliquam ut diam rutrum, dignissim massa at, ullamcorper mi. Ut venenatis nisl a ultricies lacinia. Maecenas tortor eros, tincidunt eu lobortis at, pretium id risus. Quisque faucibus posuere elit, vitae condimentum risus ultrices quis. Mauris porta ac leo et semper. Mauris facilisis placerat interdum. Sed faucibus imperdiet dictum.</p>
+                <h4 id="fusce">Fusce erat eros</h4>
+                <p>Fusce erat eros, luctus consequat justo quis, egestas hendrerit elit. Mauris tempor pretium ligula, in fringilla orci facilisis ut. Suspendisse congue pellentesque viverra. Nullam dictum fermentum sapien, sit amet scelerisque felis accumsan in. Suspendisse quam magna, iaculis vel tempor et, cursus sed justo. Cras eu neque eu enim porttitor egestas aliquet et turpis. Ut tempus placerat pellentesque. Nam rhoncus euismod quam et pharetra.</p>
+            </div>
+        </body>
+
+        <h1 class="mt-5">Multimediální objekt</h1>
+        <div class="d-flex">
+            <img class="flex-shrink-0" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+            <div class="flex-grow-1 ms-3">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání. Odpověděl jsem, že jsem
+                nikdy zaměstnaný nebyl :)
+            </div>
+        </div>
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Skládání multimediálních objektů do sebe</h1>
+        <div class="d-flex">
+            <img class="flex-shrink-0 me-3" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+            <div class="flex-grow-1">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání. Odpověděl jsem, že jsem
+                vlastně nikdy zaměstnaný nebyl :D
+
+                <div class="d-flex mt-3">
+                    <a class="flex-shrink-0 ms-3" href="https://www.itnetwork.cz/portfolio/17">
+                        <img class="flex-shrink-0"
+                            src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar_david.png"
+                            alt="David Jančík" width="64" height="64">
+                    </a>
+                    <div class="flex-grow-1">
+                        <h5 class="mt-0">David Jančík, 14:22</h5>
+                        Pojď raději do fitka! :P
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Zarovnání a pořadí multimediálních objektů</h1>
+        <div class="d-flex">
+            <div class="flex-shrink-0 me-3">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání.<br /><br />Odpověděl
+                jsem, že jsem vlastně nikdy zaměstnaný nebyl :D
+            </div>
+            <img class="align-self-end ms-3" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+        </div>
+
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Mediální seznamy</h1>
+        <ul class="list-unstyled">
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Úvod do CSS frameworku Bootstrap</h5>
+                    Úvod do nejpopulárnějšího CSS frameworku vysvětlí proč bychom měli frameworky používat,
+                    vytvoříme první stránku a řekneme si kde najít šablony zdarma.
+                </div>
+            </li>
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Bootstrap - Reboot</h5>
+                    V tutoriálu si popíšeme jak Reboot resetuje výchozí CSS styly a jaké konvence bychom měli při
+                    práci s CSS frameworkem Bootstrap dodržovat.
+                </div>
+            </li>
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Bootstrap - Typografie</h5>
+                    V tutoriálu si zmíníme první Bootstrap třídy, kterými explicitně stylujeme nadpisy a podnadpisy,
+                    citace, zkratky a seznamy. Seznámíme se s utility třídami.
+                </div>
+            </li>
+        </ul>
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Kontejner</h1>
+
+        <div class="container bg-primary text-white">
+            Kontejner
+        </div>
+
+        <h1 class="mt-5">Fluid kontejner</h1>
+</div>
+
+
+<div class="container-fluid bg-primary text-white">
+    Kontejner
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+
+</html>

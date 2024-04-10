@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="cs-cz">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Bottstrap část 5</title>
+
+    <!-- Odkaz na CSS styly -->
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+    <div class="container ">
+
+        <!-- PAGINACE -->
+        <h1 class="mt-5">Paginace</h1>
+
+        <nav aria-label="Stránkování">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <span aria-hidden="true" class="page-link">&laquo;</span>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- UPOZORNĚNÍ -->
+        <h1 class="mt-5">Upozornění</h1>
+        <div class="alert alert-success" role="alert">
+            Zpráva byla úspěšně odeslána.
+        </div>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- ZAVÍRÁNÍ HLÁŠEK -->
+        <h1 class="mt-5">Zavírání hlášek</h1>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <p><strong>Registrace byla úspěšná</strong> a na váš email byl odeslán potvrzující kód.</p>
+            <hr>
+            <p>Jste již jen krok od svých nových IT znalostí a skvělého zaměstnání!</p>
+            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <script>
+                var alertNode = document.querySelector('.alert');
+                bootstrap.Alert.getInstance(alertNode);
+
+                // Přidání posluchače pro událost zavření alertu
+                alertNode.addEventListener('closed.bs.alert', function () {
+                    // ... Kód pro uložení cookie ...
+                });
+
+                // Přidání posluchače pro tlačítko pro zavření alertu
+                document.querySelector('.alert .close').addEventListener('click', function () {
+                    // Tento kód se spustí, když uživatel klikne na tlačítko zavřít
+                    // Alert se zavře díky výchozí funkci Bootstrapu, vyvolá se událost 'closed.bs.alert'
+                });
+            </script>
+        </div>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- UTILITA CLOSE -->
+        <h1 class="mt-5">Close utilita</h1>
+        <button type="button" class="btn-close" aria-label="Zavřít">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- DROBEČKOVÁ NAVIGACE (BREADCRUMB) -->
+        <h1 class="mt-5">Breadcrumb</h1>
+        <nav aria-label="Drobečková navigace" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Domů</a></li>
+                <li class="breadcrumb-item"><a href="#">HTML a CSS</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Bootstrap</li>
+            </ol>
+        </nav>
+
+        <!-- MODÁLNÍ DIALOG
+        <h1 class="mt-5">Modální dialog</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dialog">
+            Otevřít dialog
+        </button>
+        <div class="modal fade" id="dialog" tabindex="-1" aria-labelledby="dialog-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dialog-label">Titulek</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                <nav aria-label="Drobečková navigace" role="navigation">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Domů</a></li>
+                        <li class="breadcrumb-item"><a href="#">HTML a CSS</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Bootstrap</li>
+                    </ol>
+                </nav>
+            </script>
+        </div> -->
+
+        <!-- PŘEDVYPLNĚNÍ OBSAHU
+        <h1 class="mt-5">Předvyplnění obsahu</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dialog"
+            data-bs-whatever="funkce">Navrhnout novou funkci</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dialog"
+            data-bs-whatever="bug">Nahlásit bug</button>
+
+        <div class="modal fade" id="dialog" tabindex="-1" aria-labelledby="dialog-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dialog-label">Vývoj systému</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="typ-pozadavku" class="col-form-label">Typ požadavku</label>
+                                <input type="text" class="form-control" id="typ-pozadavku">
+                            </div>
+                            <div class="mb-3">
+                                <label for="text-pozadavku" class="col-form-label">Text</label>
+                                <textarea class="form-control" id="text-pozadavku"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Odeslat</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zavřít</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var MyModal = document.getElementById('dialog')
+            MyModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget   // Získáme tlačítko, kterým jsme dialog otevřeli
+                var recipient = button.getAttribute('data-bs-whatever')   // Získáme info z data-bs-whatever atributu
+                var modalBodyInput = MyModal.querySelector('.modal-body input') // Přiřadíme hodnotu do inputu
+                modalBodyInput.value = recipient
+            })
+        </script> -->
+
+        <hr class="mt-5 text-danger">
+
+        <h1 class="mt-5">Pop-overs</h1>
+        <button type="button" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover"
+            data-bs-placement="top" data-bs-content="Text nahoře">
+            Popover nahoře
+        </button>
+        <button type="button" class="btn btn-secondary " data-bs-container="body" data-bs-toggle="popover"
+            data-bs-placement="right" data-bs-content="Text vpravo">
+            Popover vpravo
+        </button>
+        <button type="button" class="btn btn-success" data-bs-container="body" data-bs-toggle="popover"
+            data-bs-placement="bottom" data-bs-content="Text dole">
+            Popover dole
+        </button>
+        <button type="button" class="btn btn-danger" data-bs-container="body" data-bs-toggle="popover"
+            data-bs-placement="left" data-bs-content="Text vlevo">
+            Popover vlevo
+        </button>
+
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- POPOVER -->
+        <h1 class="mt-5">Skrytí při kliknutí mimo pop-over (NEGUNGUJE)</h1>
+        <a tabindex="0" class="btn btn-lg btn-primary" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+            title="Skrytí popoveru" data-bs-content="Tento obsah zmizí po kliknutí kamkoli mimo něj.">Test popoveru</a>
+
+        <script>
+            var popover = new bootstrap.Popover(document.querySelector('.popover-btn'), {
+                trigger: 'focus'
+            })
+        </script>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- SCROLLSPY NA NAVBARU -->
+        <h1 class="mt-5">Scrollspy na navbaru</h1>
+
+        <body data-bs-spy="scroll" data-bs-target="#navbar-ukazka" data-bs-offset="70" style="position: relative">
+            <nav id="navbar-ukazka" class="navbar navbar-light bg-light sticky-top">
+                <a class="navbar-brand" href="#">Navigace</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#lorem1">Lorem ipsum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#duis2">Duis semper</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Další</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#fusce3">Fusce erat eros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div>
+                <h4 id="lorem1">Lorem ipsum</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor efficitur quam nec
+                    dignissim. Aenean a condimentum tellus, vitae bibendum lectus. Maecenas convallis, ex ac dictum
+                    sagittis, arcu justo porta lorem, vitae efficitur leo risus id eros. Vivamus euismod lacus nec enim
+                    commodo, et viverra eros fermentum. Quisque congue scelerisque odio, ut imperdiet lectus ornare non.
+                    Maecenas ac pharetra ante, vel eleifend tellus. Integer id ante eget eros imperdiet placerat eget a
+                    odio. Maecenas mollis pellentesque aliquet. Cras ultricies erat nec lorem condimentum, gravida
+                    semper leo venenatis. Nullam in ipsum in odio commodo molestie at vel dui. Mauris quis lacus et
+                    lorem elementum ultrices.</p>
+                <h4 id="duis1">Duis semper</h4>
+                <p>Duis semper id leo sit amet consequat. Integer sit amet odio mattis, scelerisque turpis in, mattis
+                    metus. Aenean nisl mi, pretium at mattis quis, auctor vitae sem. Duis at lobortis est. Phasellus
+                    auctor sem in imperdiet faucibus. Morbi laoreet nibh nec turpis rhoncus, in auctor nunc consectetur.
+                    Phasellus fringilla, leo non molestie dictum, orci enim auctor neque, sed dignissim augue mauris sit
+                    amet erat. Aliquam ut diam rutrum, dignissim massa at, ullamcorper mi. Ut venenatis nisl a ultricies
+                    lacinia. Maecenas tortor eros, tincidunt eu lobortis at, pretium id risus. Quisque faucibus posuere
+                    elit, vitae condimentum risus ultrices quis. Mauris porta ac leo et semper. Mauris facilisis
+                    placerat interdum. Sed faucibus imperdiet dictum.</p>
+                <h4 id="fusce1">Fusce erat eros</h4>
+                <p>Fusce erat eros, luctus consequat justo quis, egestas hendrerit elit. Mauris tempor pretium ligula,
+                    in fringilla orci facilisis ut. Suspendisse congue pellentesque viverra. Nullam dictum fermentum
+                    sapien, sit amet scelerisque felis accumsan in. Suspendisse quam magna, iaculis vel tempor et,
+                    cursus sed justo. Cras eu neque eu enim porttitor egestas aliquet et turpis. Ut tempus placerat
+                    pellentesque. Nam rhoncus euismod quam et pharetra.</p>
+            </div>
+        </body>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- SCROLLSPY NA VÍCEÚROVŇOVÉ NAVIGACI -->
+        <h1 class="mt-5">Scrollspy na víceúrovnňové navigaci</h1>
+
+        <body data-bs-spy="scroll" data-bs-target="#navbar-ukazka" data-bs-offset="70" style="position: relative">
+            <div class="row">
+                <div class="col-4">
+                    <nav id="navbar-ukazka" class="navbar navbar-light bg-light sticky-top">
+                        <a class="navbar-brand" href="#">Navigace</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link active" href="#lorem2">Lorem ipsum</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ms-3 my-1" href="#aenean2">Aenean a condimentum</a>
+                                <a class="nav-link ms-3 my-1" href="#vivamus2">Vivamus</a>
+                            </nav>
+                            <a class="nav-link" href="#duis2">Duis semper</a>
+                            <a class="nav-link" href="#fusce2">Fusce erat eros</a>
+                            <nav class="nav nav-pills flex-column">
+                                <a class="nav-link ms-3 my-1" href="#mauris2">Mauris tempor</a>
+                            </nav>
+                        </nav>
+                    </nav>
+                </div>
+
+                <div class="col-8">
+                    <h4 id="lorem2">Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor efficitur quam nec
+                        dignissim.</p>
+                    <h5 id="aenean2">Aenean a condimentum</h5>
+                    <p>Aenean a condimentum tellus, vitae bibendum lectus. Maecenas convallis, ex ac dictum sagittis,
+                        arcu justo porta lorem, vitae efficitur leo risus id eros.</p>
+                    <h5 id="vivamus2">Vivamus</h5>
+                    <p>Vivamus euismod lacus nec enim commodo, et viverra eros fermentum. Quisque congue scelerisque
+                        odio, ut imperdiet lectus ornare non. Maecenas ac pharetra ante, vel eleifend tellus. Integer id
+                        ante eget eros imperdiet placerat eget a odio. Maecenas mollis pellentesque aliquet. Cras
+                        ultricies erat nec lorem condimentum, gravida semper leo venenatis. Nullam in ipsum in odio
+                        commodo molestie at vel dui. Mauris quis lacus et lorem elementum ultrices.</p>
+                    <h4 id="duis2">Duis semper</h4>
+                    <p>Duis semper id leo sit amet consequat. Integer sit amet odio mattis, scelerisque turpis in,
+                        mattis metus. Aenean nisl mi, pretium at mattis quis, auctor vitae sem. Duis at lobortis est.
+                        Phasellus auctor sem in imperdiet faucibus. Morbi laoreet nibh nec turpis rhoncus, in auctor
+                        nunc consectetur. Phasellus fringilla, leo non molestie dictum, orci enim auctor neque, sed
+                        dignissim augue mauris sit amet erat. Aliquam ut diam rutrum, dignissim massa at, ullamcorper
+                        mi. Ut venenatis nisl a ultricies lacinia. Maecenas tortor eros, tincidunt eu lobortis at,
+                        pretium id risus. Quisque faucibus posuere elit, vitae condimentum risus ultrices quis. Mauris
+                        porta ac leo et semper. Mauris facilisis placerat interdum. Sed faucibus imperdiet dictum.</p>
+                    <h4 id="fusce2">Fusce erat eros</h4>
+                    <p>Fusce erat eros, luctus consequat justo quis, egestas hendrerit elit.</p>
+                    <h5 id="mauris2">Mauris tempor</h5>
+                    <p>Mauris tempor pretium ligula, in fringilla orci facilisis ut. Suspendisse congue pellentesque
+                        viverra. Nullam dictum fermentum sapien, sit amet scelerisque felis accumsan in. Suspendisse
+                        quam magna, iaculis vel tempor et, cursus sed justo. Cras eu neque eu enim porttitor egestas
+                        aliquet et turpis. Ut tempus placerat pellentesque. Nam rhoncus euismod quam et pharetra.</p>
+                </div>
+            </div>
+        </body>
+
+        <hr class="mt-5 text-danger">
+
+        <!-- SCROLLSPY BNA LIST GROUP -->
+        <h1 class="mt-5">Scrollspy na List Group</h1>
+
+        <body data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="70" class="scrollspy-example"
+            style="position: relative">
+            <div class="row">
+                <div class="col-4">
+                    <div id="list-example" class="list-group sticky-top">
+                        <a class="list-group-item list-group-item-action active" href="#lorem3">Lorem ipsum</a>
+                        <a class="list-group-item list-group-item-action" href="#duis3">Duis semper</a>
+                        <a class="list-group-item list-group-item-action" href="#fusce3">Fusce erat eros</a>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <h4 id="lorem3">Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor efficitur quam nec
+                        dignissim. Aenean a condimentum tellus, vitae bibendum lectus. Maecenas convallis, ex ac dictum
+                        sagittis, arcu justo porta lorem, vitae efficitur leo risus id eros. Vivamus euismod lacus nec
+                        enim commodo, et viverra eros fermentum. Quisque congue scelerisque odio, ut imperdiet lectus
+                        ornare non. Maecenas ac pharetra ante, vel eleifend tellus. Integer id ante eget eros imperdiet
+                        placerat eget a odio. Maecenas mollis pellentesque aliquet. Cras ultricies erat nec lorem
+                        condimentum, gravida semper leo venenatis. Nullam in ipsum in odio commodo molestie at vel dui.
+                        Mauris quis lacus et lorem elementum ultrices.</p>
+                    <h4 id="duis3">Duis semper</h4>
+                    <p>Duis semper id leo sit amet consequat. Integer sit amet odio mattis, scelerisque turpis in,
+                        mattis metus. Aenean nisl mi, pretium at mattis quis, auctor vitae sem. Duis at lobortis est.
+                        Phasellus auctor sem in imperdiet faucibus. Morbi laoreet nibh nec turpis rhoncus, in auctor
+                        nunc consectetur. Phasellus fringilla, leo non molestie dictum, orci enim auctor neque, sed
+                        dignissim augue mauris sit amet erat. Aliquam ut diam rutrum, dignissim massa at, ullamcorper
+                        mi. Ut venenatis nisl a ultricies lacinia. Maecenas tortor eros, tincidunt eu lobortis at,
+                        pretium id risus. Quisque faucibus posuere elit, vitae condimentum risus ultrices quis. Mauris
+                        porta ac leo et semper. Mauris facilisis placerat interdum. Sed faucibus imperdiet dictum.</p>
+                    <h4 id="fusce3">Fusce erat eros</h4>
+                    <p>Fusce erat eros, luctus consequat justo quis, egestas hendrerit elit. Mauris tempor pretium
+                        ligula, in fringilla orci facilisis ut. Suspendisse congue pellentesque viverra. Nullam dictum
+                        fermentum sapien, sit amet scelerisque felis accumsan in. Suspendisse quam magna, iaculis vel
+                        tempor et, cursus sed justo. Cras eu neque eu enim porttitor egestas aliquet et turpis. Ut
+                        tempus placerat pellentesque. Nam rhoncus euismod quam et pharetra.</p>
+                </div>
+            </div>
+        </body>
+
+
+        <hr class="mt-5 text-danger">
+        
+        <!-- MULTIMEDIÁLNÍ OBJEKT -->
+        <h1 class="mt-5">Multimediální objekt</h1>
+        <div class="d-flex">
+            <img class="flex-shrink-0" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+            <div class="flex-grow-1 ms-3">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání. Odpověděl jsem, že jsem
+                nikdy zaměstnaný nebyl :)
+            </div>
+        </div>
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Skládání multimediálních objektů do sebe</h1>
+        <div class="d-flex">
+            <img class="flex-shrink-0 me-3" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+            <div class="flex-grow-1">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání. Odpověděl jsem, že jsem
+                vlastně nikdy zaměstnaný nebyl :D
+
+                <div class="d-flex mt-3">
+                    <a class="flex-shrink-0 ms-3" href="https://www.itnetwork.cz/portfolio/17">
+                        <img class="flex-shrink-0"
+                            src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar_david.png" alt="David Jančík"
+                            width="64" height="64">
+                    </a>
+                    <div class="flex-grow-1">
+                        <h5 class="mt-0">David Jančík, 14:22</h5>
+                        Pojď raději do fitka! :P
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Zarovnání a pořadí multimediálních objektů</h1>
+        <div class="d-flex">
+            <div class="flex-shrink-0 me-3">
+                <h5 class="mt-0">David Hartinger, 13:05</h5>
+                Dnes se mě při žádosti o hypotéku ptali, jaké bylo mé poslední zaměstnání.<br /><br />Odpověděl
+                jsem, že jsem vlastně nikdy zaměstnaný nebyl :D
+            </div>
+            <img class="align-self-end ms-3" src="https://www.itnetwork.cz/images/5/css/bootstrap/avatar.png"
+                alt="David Hartinger" width="64" height="64">
+        </div>
+
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Mediální seznamy</h1>
+        <ul class="list-unstyled">
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Úvod do CSS frameworku Bootstrap</h5>
+                    Úvod do nejpopulárnějšího CSS frameworku vysvětlí proč bychom měli frameworky používat,
+                    vytvoříme první stránku a řekneme si kde najít šablony zdarma.
+                </div>
+            </li>
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Bootstrap - Reboot</h5>
+                    V tutoriálu si popíšeme jak Reboot resetuje výchozí CSS styly a jaké konvence bychom měli při
+                    práci s CSS frameworkem Bootstrap dodržovat.
+                </div>
+            </li>
+            <li class="d-flex align-items-start mb-3">
+                <img class="flex-shrink-0 me-3"
+                    src="https://www.itnetwork.cz/images/5/css/bootstrap/bootstrap-stack.png" alt="Bootstrap kurz"
+                    width="96" height="96">
+                <div>
+                    <h5 class="mt-0 mb-1">Bootstrap - Typografie</h5>
+                    V tutoriálu si zmíníme první Bootstrap třídy, kterými explicitně stylujeme nadpisy a podnadpisy,
+                    citace, zkratky a seznamy. Seznámíme se s utility třídami.
+                </div>
+            </li>
+        </ul>
+        <hr class="mt-5 text-danger">
+        <h1 class="mt-5">Kontejner</h1>
+
+        <div class="container bg-primary text-white">
+            Kontejner
+        </div>
+
+        <h1 class="mt-5">Fluid kontejner</h1>
+    </div>
+
+
+    <div class="container-fluid bg-primary text-white">
+        Kontejner
+    </div>
+
+
+
+
+
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+
+</body>
+
+</html>
